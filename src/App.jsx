@@ -64,9 +64,10 @@ const App = () => {
   }, []);
   return (
     <>
-      <h1 className="header">CAR</h1>
+      <h1 className="header">Carvoy</h1>
       <div className="searchbar">
-        <input
+        <div className="search">
+          <input
           onKeyDown={EnterSearch}
           onChange={(e) => handleSearch(e.target.value)}
           value={input}
@@ -76,6 +77,7 @@ const App = () => {
           id=""
         />
         <button onClick={handleSearchBtn}>Search</button>
+        </div>
         <select onChange={(e) => handleValue(e.target.value)}>
           <option value="All">All</option>
           {catagry.map((item, index) => {
@@ -96,11 +98,11 @@ const App = () => {
           return (
             <div className="card" key={id}>
               <img src={image} />
-              <h1>{make}</h1>
-              <h3>Model:{model}</h3>
-              <h4>Price:{price} $</h4>
-              <h4>year :{year}</h4>
-              <p>Transmission:{transmission}</p>
+              <h2>{make}</h2>
+              <h4>Model:{model}</h4>
+              <h6>Price:{price} $</h6>
+              <h6>Year :{year}</h6>
+              <h6>Transmission:{transmission}</h6>
             </div>
           );
         })}
